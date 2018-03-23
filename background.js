@@ -1,3 +1,10 @@
+chrome.runtime.setUninstallURL("https://1ce.org");
+
+if (!localStorage.created) {
+  chrome.tabs.create({ url: "https://1ce.org" });
+  localStorage.ver = extension.manifest.version;
+}
+
 chrome.browserAction.onClicked.addListener(function(tab){
   chrome.windows.getCurrent(function(currntWindow){
 

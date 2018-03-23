@@ -1,6 +1,6 @@
   {
     "name": "1click-merge-windows",
-    "version": "1.0",
+    "version": "0.1",
     "description": "Merge all opened windows to one",
     "permissions": [
           "tabs",
