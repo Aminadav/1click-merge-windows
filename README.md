@@ -1,0 +1,1 @@
+Merge windows to tabs

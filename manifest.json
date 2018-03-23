@@ -1,0 +1,23 @@
+  {
+    "name": "1click-merge-windows",
+    "version": "1.0",
+    "description": "Merge all opened windows to one",
+    "permissions": [
+          "tabs",
+          "windows"
+        ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action":{
+      "default_icon": "images/browseraction.png"
+      },
+    "offline_enabled": true,
+    "default_locale": "en",
+    "icons": {
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "manifest_version": 2
+  }
