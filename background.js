@@ -2,7 +2,8 @@ chrome.runtime.setUninstallURL("https://1ce.org");
 
 if (!localStorage.created) {
   chrome.tabs.create({ url: "https://1ce.org" });
-  localStorage.ver = extension.manifest.version;
+  var manifest = chrome.runtime.getManifest();
+  localStorage.ver = manifest.version;
 }
 
 chrome.browserAction.onClicked.addListener(function(tab){
@@ -11,10 +12,10 @@ chrome.browserAction.onClicked.addListener(function(tab){
     chrome.windows.getAll(function(windows){
     
     for(let otherWindow of windows){
-      console.log(otherWindow.id, currntWindow.id)
+      //console.log(otherWindow.id, currntWindow.id)
       if(otherWindow.id != currntWindow.id){
         chrome.tabs.query({windowId:otherWindow.id}, function(tabs){
-          console.log(tabs);
+          //console.log(tabs);
           let tabsIds = [];
           for(let tab of tabs){
             tabsIds.push(tab.id);
