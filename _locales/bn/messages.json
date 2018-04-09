@@ -1,5 +1,6 @@
 {
-"name": {"message": "ওয়েবপেইজ স্ক্রীণশট - 1Click Screenshot" },
-"dir": {"message": "ltr" },
-"description": {"message": "সহজেই দ্রুততার সাথে ওয়েবপেইজের স্ক্রীণশট নিন এবং .jpg হিসেবে সংরক্ষণ করুন। প্রথম ক্রোম এক্সটেনশন যেটি পুরো পেইজের স্ক্রীণশট নিতে.." }
+  "browser_action": {"message": "Save picture from webcam" },
+  "ext_desc": {"message": "Merge all opened windows to tabs of one window" },
+  "ext_name": {"message": "1click Merge Windows" }
 }
+

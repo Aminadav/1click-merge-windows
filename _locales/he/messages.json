@@ -1,3 +1,6 @@
 {
-"Merge all windows": {"message": "אחד את כל החלונות" }
+  "browser_action": {"message": "אחד את כל החלונות" },
+  "ext_desc": {"message": "אחד את כל החלונות הפתוחים לטאבים בחלון הנוכחי" },
+  "ext_name": {"message": "אחד חלונות בלחיצה אחת" }
 }
+

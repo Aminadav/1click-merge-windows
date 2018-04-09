@@ -1,7 +1,7 @@
   {
-    "name": "1click-merge-windows",
+    "name": "__MSG_ext_name__",
     "version": "0.1",
-    "description": "Merge all opened windows to one",
+    "description": "__MSG_ext_desc__",
     "permissions": [
           "tabs",
           "windows"
@@ -12,7 +12,7 @@
     },
     "browser_action":{
       "default_icon": "images/browseraction.png",
-      "default_title": "Merge all windows"
+      "default_title": "__MSG_browser_action__"
       },
     "offline_enabled": true,
     "default_locale": "en",
