@@ -1,10 +1,11 @@
-1click-is-site-down | https://1ce.org
+1click-pause-history | https://1ce.org
 
 
 This extension is an open-source 📰 extension. What is it mean for you:
 
 
 ☑ It's mean it's safe. Everyone can inspect the source code.
+
 ☑ It's mean that if you're are a developer or intern your more than welcome to contribute code.
 
 This extension is another extension of 1ce. Our mission is to advance open-source extensions.
