@@ -1,14 +1,11 @@
   {
     "name": "__MSG_ext_name__",
     "short_name": "__MSG_ext_name__",
-    "version": "0.1",
+    "version": "1.0",
     "description": "__MSG_ext_desc__",
-    "permissions": [
-          "tabs",
-          "windows"
-        ],
+    "permissions": ["activeTab"],
     "background": {
-      "scripts": ["background.js"],
+      "scripts": ["background.js","js/permissions.js"],
       "persistent": false
     },
     "browser_action":{

@@ -1,4 +1,5 @@
 {
+  "need_permissions": {"message": "We need those permissions to merge windows" },
   "browser_action": {"message": "Merge Windows" },
   "ext_desc": {"message": "Merge all opened windows to tabs of one window" },
   "ext_name": {"message": "1click Merge Windows" }
