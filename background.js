@@ -8,6 +8,13 @@ if (!localStorage.created) {
 }
 
 chrome.browserAction.onClicked.addListener(function(tab){
+  premissions.requestPermissions({ permissions:[]}, mergeWindows, function(){
+    alertNotif(tab);
+  })
+
+});
+
+function mergeWindows(){
   chrome.windows.getCurrent(function(currntWindow){
 
     chrome.windows.getAll(function(windows){
@@ -29,4 +36,8 @@ chrome.browserAction.onClicked.addListener(function(tab){
     });
 
   });
-});
+}
+
+function alertNotif(tab){
+  chrome.tabs.executeScript(tab.id,{code: "alert('" + chrome.i18n.getMessage("need_permissions") + "')"});
+}
