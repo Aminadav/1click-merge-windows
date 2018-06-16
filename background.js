@@ -8,9 +8,10 @@ if (!localStorage.created) {
 }
 
 chrome.browserAction.onClicked.addListener(function(tab){
-  premissions.requestPermissions({ permissions:[]}, mergeWindows, function(){
-    alertNotif(tab);
-  })
+  // premissions.requestPermissions({ permissions:[]}, mergeWindows, function(){
+  //   alertNotif(tab);
+  // })
+  mergeWindows();
 
 });
 
@@ -29,6 +30,8 @@ function mergeWindows(){
             tabsIds.push(tab.id);
           }
           chrome.tabs.move(tabsIds, {windowId:currntWindow.id,index:-1});
+          console.log('checkIfRankNeededAndAndAddRank');
+          injectJsCurrentTab();
         })
       }
     }
