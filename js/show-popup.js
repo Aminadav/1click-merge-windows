@@ -35,6 +35,7 @@ function oneClickGetPopupHtml(extension) {
 	text-decoration:underline;
 }
 .please-rate-text {
+  padding-top: 15px;
     margin: 0 auto;
 	width: 566px;
 	max-width:100%;
@@ -93,7 +94,7 @@ button.btn-popup.no-thanks {
 	padding-top:14px;
 }
 .addition {
-    padding-top: 20px;
+    padding-top: 15px;
 }
 .please-rate-buttons {
 	padding-top: 50px;
@@ -107,33 +108,27 @@ button.btn-popup.no-thanks {
 }
   </style>
 	<div class="pleaseRate">
-	<div class="please-rate-title">What do you think about this extension?</div>
-		<hr>
-
 		<div class="please-rate-text">
-			To advance the open-source world, and to give us motivation, 
-			If you like 1Click Merge Windows <br/><a target=_blank href="https://chrome.google.com/webstore/detail/jngapkhcjnmlegkjhlcfpkdmhldapikm/reviews" >please give us 5-stars</a>
+			If you like 1Click Merge Windows <a target=_blank href="https://chrome.google.com/webstore/detail/jngapkhcjnmlegkjhlcfpkdmhldapikm/reviews" >please give us 5-stars</a>
 			<br/>
-			<div class="addition">
-				In addition, If you want to report a bug, or you have a recommendation, please <a href="https://github.com/1click-extensions/1click-merge-windows/issues/new">report a public issue</a> or  <a href="mailto:1click-merge-windows@1ce.org">Contact us</a>
+			<div class="addition">To report a bug please <a href="https://github.com/1click-extensions/1click-merge-windows/issues/new">submit issue</a> 
 			</div>
 			<div class="skip-wrp"><button type="button" class="btn-popup no-thanks ">Skip</button></div>
 		</div>
-		<a class="please-rate-github" href="https://github.com/1click-extensions/1click-merge-windows">Fork on github</a>
 	</div>
 	`)
 }
 
-function checkIfRankNeededAndAndAddRank() {
+function checkIfRankNeededAndAndAddRank(callbackIfNot) {
   checkIfRankNeeded(function() {
     oneClickPopupHtmlToBody(null)
 
     chrome.runtime.sendMessage({
       action: "rankRequested",
     })
-  })
+  },callbackIfNot)
 }
-function checkIfRankNeeded(callback) {
+function checkIfRankNeeded(callback, callbackIfNot) {
   chrome.runtime.sendMessage(
     {
       action: "checkIfNeedRating",
@@ -142,7 +137,10 @@ function checkIfRankNeeded(callback) {
       if (ratingNeeded) {
         callback()
       }
-    },
+      else if('function' == typeof callbackIfNot){
+        callbackIfNot();
+      }
+    }
   )
 }
 
@@ -150,6 +148,9 @@ function removeRateRequest() {
   var popup = document.getElementsByClassName("pleaseRate")[0]
   if (popup) {
     popup.parentElement.removeChild(popup)
+  }
+  if('function' == typeof afterRemoveRateRequest){
+    afterRemoveRateRequest();
   }
 }
 //console.log(typeof openRankPopupWhenPossible );
